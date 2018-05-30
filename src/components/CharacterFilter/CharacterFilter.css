@@ -19,3 +19,7 @@
   color: var(--c-gray-dark);
   margin: 5px 0;
 }
+
+.character-filter__submit {
+  margin: 5px 10px;
+}

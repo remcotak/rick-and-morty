@@ -4,6 +4,7 @@ import fetch from 'isomorphic-fetch';
 export const FETCH_CHARACTERS_REQUEST = 'FETCH_CHARACTERS_REQUEST';
 export const FETCH_CHARACTERS_SUCCESS = 'FETCH_CHARACTERS_SUCCESS';
 export const FETCH_CHARACTERS_ERROR = 'FETCH_CHARACTERS_ERROR';
+export const SET_FILTER_VALUE = 'SET_FILTER_VALUE';
 
 // Action creators
 export const fetchCharactersRequest = () => {
@@ -39,4 +40,8 @@ export const fetchCharacters = (
         dispatch(fetchCharactersSuccess(json))
       );
   };
+};
+
+export const setFilterValue = event => {
+  return { type: SET_FILTER_VALUE, event };
 };

@@ -1,4 +1,4 @@
-* React boilerplate
+#React boilerplate
 
 This boilerplate contains:
 
@@ -12,7 +12,8 @@ This boilerplate contains:
 
 TODO:
 
+* filter characters
+* input component with label and classnames
 * charactercard anchor
 * fix footer positioning
-* filter characters
 * locations and episodes page

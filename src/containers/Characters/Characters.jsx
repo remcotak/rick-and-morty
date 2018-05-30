@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { fetchCharacters } from 'actions';
+import { fetchCharacters, setFilterValue } from 'actions';
 import { CharacterCard, CharacterFilter, Loader } from 'components';
 import './Characters.css';
 
@@ -9,16 +9,6 @@ class Characters extends Component {
     super(props);
 
     this.characterGrid = React.createRef();
-
-    this.state = {
-      filters: {
-        name: '',
-        status: '',
-        species: '',
-        type: '',
-        gender: ''
-      }
-    };
   }
 
   componentDidMount() {
@@ -56,7 +46,10 @@ class Characters extends Component {
   render() {
     return (
       <Fragment>
-        <CharacterFilter filters={this.state.filters} />
+        <CharacterFilter
+          filters={this.props.filters}
+          setFilterValue={this.props.setFilterValue}
+        />
         <ul styleName="characters-grid" ref={this.characterGrid}>
           {this.props.characters.map(character => (
             <CharacterCard
@@ -76,7 +69,8 @@ export default connect(
   state => ({
     isFetching: state.characters.isFetching,
     characters: state.characters.characters,
-    info: state.characters.info
+    info: state.characters.info,
+    filters: state.characters.filters
   }),
-  { fetchCharacters }
+  { fetchCharacters, setFilterValue }
 )(Characters);
