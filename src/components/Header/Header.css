@@ -1,0 +1,17 @@
+.header {
+  background-color: #fff;
+  border-bottom: 5px solid var(--c-gray-medium);
+  padding: calc(100px + 1vw) 0;
+}
+
+.header__title {
+  color: var(--c-main);
+  font-size: calc(1rem + 6vw);
+  font-family: 'Get Schwifty';
+  text-align: center;
+  text-shadow: 2px 2px #02AFC5;
+  /* padding: calc(100px + 1vw) 0; */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}

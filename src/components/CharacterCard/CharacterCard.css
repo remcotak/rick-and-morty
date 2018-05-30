@@ -1,0 +1,56 @@
+.character {
+  font-weight: 300;
+  border-radius:0 0 10px;
+  background-color: var(--c-gray-medium);
+  border-top: 4px solid var(--c-main);
+  box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: all 100ms ease-in;
+}
+
+.character:hover {
+  transform:translateY(-20px) scale(1.1) rotate(var(--a-rotation));
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.2);
+}
+
+.character__header {
+  position: relative;
+}
+
+.character__image {
+  width: 100%;
+  height: auto;
+}
+
+.character__information-overlay {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.6);
+  padding: 10px;
+}
+
+.character__information {
+  font-weight: normal;
+}
+
+.information {
+  padding: 10px;
+}
+
+.information__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--c-gray-dark);
+  padding: 5px 0;
+}
+
+.information__parameter{
+  /* Empty for reference */
+}
+
+.information__data {
+  color: var(--c-main);
+}

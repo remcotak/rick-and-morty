@@ -1,0 +1,8 @@
+.characters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: var(--g-gutter);
+  list-style: none;
+  margin: 0;
+  padding: var(--g-gutter) 0;
+}
