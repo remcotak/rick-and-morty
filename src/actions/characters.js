@@ -19,16 +19,18 @@ export const fetchCharactersError = error => {
   return { type: FETCH_CHARACTERS_ERROR, error };
 };
 
-export const fetchCharacters = (
-  url = 'https://rickandmortyapi.com/api/character/'
-) => {
+export const fetchCharacters = () => {
   // Pass the dispatch method as an argument to the function,
   // so its able to dispatch actions itself.
-  return dispatch => {
+  return (dispatch, getState) => {
     // First dispatch: the app state is updated to inform
     // that the API call is starting.
     dispatch(fetchCharactersRequest());
-
+    // Set the url to fetch,
+    // If no next page url is given, fetch page 1
+    const url =
+      getState().characters.info.next ||
+      'https://rickandmortyapi.com/api/character/';
     // Return a promise to wait for.
     return fetch(url)
       .then(

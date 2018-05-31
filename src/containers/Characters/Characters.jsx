@@ -27,9 +27,8 @@ class Characters extends Component {
     if (this.props.isFetching) {
       return;
     }
-    // Fetch the next page of characters,
-    // according to the next url in the info
-    this.props.fetchCharacters(this.props.info.next);
+    // Fetch the next page of characters
+    this.props.fetchCharacters();
   };
 
   handleScroll = () => {
