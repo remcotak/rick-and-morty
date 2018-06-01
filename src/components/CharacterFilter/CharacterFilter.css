@@ -17,6 +17,7 @@
 }
 
 .character-filter__input {
+  font-size: 14px;
   border-radius: 0;
   border: none;
   padding: 10px;
@@ -37,7 +38,7 @@ select.character-filter__input {
 
 .character-filter__submit {
   display: block;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   color: #FFF;
   background-color: var(--c-gray-medium);
