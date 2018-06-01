@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { fetchCharacters, setFilterValue } from 'actions';
+import { fetchCharacters, setFilterValue, filterCharacters } from 'actions';
 import { CharacterCard, CharacterFilter, Loader } from 'components';
 import './Characters.css';
 
@@ -42,15 +42,30 @@ class Characters extends Component {
     }
   };
 
+  handleInputChange = event => {
+    const name = event.target.name;
+    const value = event.target.value;
+    this.props.setFilterValue({ name, value });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    this.props.filterCharacters();
+  };
+
   render() {
+    const characters = this.props.filteredCharacters.length
+      ? this.props.filteredCharacters
+      : this.props.characters;
     return (
       <Fragment>
         <CharacterFilter
           filters={this.props.filters}
-          setFilterValue={this.props.setFilterValue}
+          handleInputChange={this.handleInputChange}
+          handleSubmit={this.handleSubmit}
         />
         <ul styleName="characters-grid" ref={this.characterGrid}>
-          {this.props.characters.map(character => (
+          {characters.map(character => (
             <CharacterCard
               key={character.id}
               character={character}
@@ -68,8 +83,9 @@ export default connect(
   state => ({
     isFetching: state.characters.isFetching,
     characters: state.characters.characters,
+    filteredCharacters: state.characters.filteredCharacters,
     info: state.characters.info,
     filters: state.characters.filters
   }),
-  { fetchCharacters, setFilterValue }
+  { fetchCharacters, setFilterValue, filterCharacters }
 )(Characters);

@@ -17,6 +17,7 @@ const renderInput = (key, filter, onChange) => {
     case 'select':
       return (
         <select name={key} onChange={onChange} value={filter.value}>
+          <option defaultValue>any</option>
           {filter.options.map(option => (
             <option value={option} key={option}>
               {option}
@@ -31,7 +32,7 @@ const renderInput = (key, filter, onChange) => {
 };
 
 const CharacterFilter = props => (
-  <div styleName="character-filter">
+  <form styleName="character-filter" onSubmit={props.handleSubmit}>
     {Object.keys(props.filters).map(key => {
       const filter = props.filters[key];
       return (
@@ -39,14 +40,14 @@ const CharacterFilter = props => (
           <label styleName="character-filter__label" htmlFor={key}>
             {filter.label}
           </label>
-          {renderInput(key, filter, props.setFilterValue)}
+          {renderInput(key, filter, props.handleInputChange)}
         </div>
       );
     })}
-    <button styleName="character-filter__submit" type="button">
+    <button styleName="character-filter__submit" type="submit">
       Filter
     </button>
-  </div>
+  </form>
 );
 
 export default CharacterFilter;
