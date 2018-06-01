@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class CharacterDetail extends Component {
   render() {
     console.log(console.log(window.innerHeight));
-    return <p>Id : {this.props.match.params.characterId}</p>;
+    return <p>Id : {this.props.match.params.id}</p>;
   }
 }
 
