@@ -1,0 +1,6 @@
+<svg width="10px" height="6px" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
+  <title>
+    Stroke 4
+  </title>
+  <polyline stroke="currentColor" stroke-width="2" transform="rotate(90 4.5 3.5)" points="2 -1 6 3 2 7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

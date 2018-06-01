@@ -1,16 +1,12 @@
 .character-filter {
-  padding: calc(var(--g-gutter) / 2) 0;
+  margin: var(--g-gutter) 0;
 }
 
-.character-filter__group {
-  margin: 10px;
-  display: inline-block;
-}
-.character-filter__group:first-of-type {
-  margin: 10px 10px 10px 0;
-}
-.character-filter__group:last-of-type {
-  margin: 10px 0 10px 10px;
+.character-filter__filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-gap: var(--g-gutter);
+
 }
 
 .character-filter__label {
@@ -20,6 +16,41 @@
   margin: 5px 0;
 }
 
+.character-filter__input {
+  border-radius: 0;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-bottom: 4px solid var(--c-gray-medium);
+}
+
+select.character-filter__input {
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url('../../static/svg/chevron-down.svg');
+  background-repeat: no-repeat;
+  background-position: right 10px top 50%;
+  padding-right: 25px;
+}
+.character-filter__input[type="text"] {
+}
+
 .character-filter__submit {
-  margin: 5px 10px;
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #FFF;
+  background-color: var(--c-gray-medium);
+  border: none;
+  border-radius: 0;
+  min-width: 180px;
+  padding: 10px;
+  margin-top: var(--g-gutterHalf);
+  margin-left: auto;
+}
+
+@media screen and (min-width: 600px)) {
+  .character-filter__filters {
+    grid-gap: var(--g-gutter);
+  }
 }

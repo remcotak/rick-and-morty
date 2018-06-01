@@ -2,10 +2,10 @@ import React from 'react';
 import { Navigation } from 'components';
 import './Header.css';
 
-const Header = () => (
+const Header = props => (
   <div styleName="header">
     {/* <h1 styleName="header__title">Rick and Morty</h1> */}
-    <Navigation />
+    <Navigation charactersCount={props.charactersCount} />
   </div>
 );
 

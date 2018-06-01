@@ -35,12 +35,12 @@ const initialState = {
       label: 'Species',
       placeholder: 'Enter species'
     },
-    type: {
-      value: '',
-      type: 'text',
-      label: 'Type',
-      placeholder: 'Enter type'
-    },
+    // type: {
+    //   value: '',
+    //   type: 'text',
+    //   label: 'Type',
+    //   placeholder: 'Enter type'
+    // },
     gender: {
       value: '',
       type: 'select',

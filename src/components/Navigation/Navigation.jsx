@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Navigation.css';
 
-const Navigation = () => (
+const Navigation = props => (
   <nav styleName="navigation">
+    {console.log(props)}
     <ul styleName="navigation__list">
       <li>
         <NavLink
@@ -12,7 +13,7 @@ const Navigation = () => (
           to="/"
           activeClassName={styles.active}
         >
-          Character
+          Characters ({props.charactersCount || '0'})
         </NavLink>
       </li>
       <li>

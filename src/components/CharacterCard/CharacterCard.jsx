@@ -47,7 +47,7 @@ const Character = props => {
       onClick={() => props.history.push(`character/${id}`)}
     >
       <div styleName="character__header">
-        <img src={image} alt={name} styleName="character__image" />
+        {/* <img src={image} alt={name} styleName="character__image" /> */}
         <div styleName="character__information-overlay">
           <div styleName="character__information">{name}</div>
         </div>

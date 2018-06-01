@@ -1,13 +1,26 @@
 :root {
   /* Color Variables */
   --c-main: #8DC23E;
+  --c-secondary: #02AFC5;
   --c-gray-light: #D9D9D9;
   --c-gray-medium: #595959;
   --c-gray-dark: #404040;
 
-  /* Gird variables */
+  /* Grid variables */
   --g-gutter: 1.875rem;
+  --g-gutterHalf: 0.9375rem;
   --g-max-width: 75em;
+
+  --g-sm-width: 30em;
+  --g-md-width: 48em;
+  --g-lg-width: 60em;
+  --g-xl-width: --g-max-width;
+
+  /* Max widths of the various breakpoints */
+  --g-xs-max-width: (--g-sm-width - 0.01);
+  --g-sm-max-width: (--g-md-width - 0.01);
+  --g-md-max-width: (--g-lg-width - 0.01);
+  --g-lg-max-width: (--g-xl-width - 0.01);
 
   /* Animation variables */
   --a-rotation: -2deg;
@@ -27,11 +40,9 @@ body {
 
 body {
   color: var(--c-gray-light);
-  /* background-color: var(--c-gray-dark); */
   font-family: sans-serif;
   font-size: 0.875rem;
   background-color: #8dc23e;
-  /* background-image: background-color: #DFDBE5; */
   background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2302afc5' fill-opacity='0.4'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E"), linear-gradient(150deg, #02AFC5 0%, #8DC23E 100%);
   background-attachment: fixed;
 }

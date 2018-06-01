@@ -1,6 +1,6 @@
 .wrapper {
   margin: 0 auto;
   max-width: var(--g-max-width);
-  padding-left: calc(var(--g-gutter) / 2);
-  padding-right: calc(var(--g-gutter) / 2);
+  padding-left: var(--g-gutterHalf);
+  padding-right: var(--g-gutterHalf);
 }
