@@ -8,7 +8,13 @@
   transition: all 100ms ease-in;
 }
 
-.character:hover {
+.characterLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.character:hover,
+.character:focus-within {
   transform:translateY(-20px) scale(1.1) rotate(var(--a-rotation));
   box-shadow: 10px 10px 20px rgba(0,0,0,0.2);
 }

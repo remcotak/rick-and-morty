@@ -1,5 +1,6 @@
 import React from 'react';
-import './CharacterCard.css';
+import { Link } from 'react-router-dom';
+import styles from './CharacterCard.css';
 
 const generateRandomRotation = (min = -5, max = 5) => {
   return `${Math.floor(min + Math.random() * (max + 1 - min))}deg`;
@@ -41,22 +42,20 @@ const Character = props => {
   };
 
   return (
-    <li
-      styleName="character"
-      style={characterStyle}
-      onClick={() => props.history.push(`character/${id}`)}
-    >
-      <div styleName="character__header">
-        {/* <img src={image} alt={name} styleName="character__image" /> */}
-        <div styleName="character__information-overlay">
-          <div styleName="character__information">{name}</div>
+    <li styleName="character" style={characterStyle}>
+      <Link className={styles.characterLink} to={`character/${id}`}>
+        <div styleName="character__header">
+          {/* <img src={image} alt={name} styleName="character__image" /> */}
+          <div styleName="character__information-overlay">
+            <div styleName="character__information">{name}</div>
+          </div>
         </div>
-      </div>
-      <div styleName="information">
-        {Object.keys(information).map(key =>
-          renderInformation(information, key)
-        )}
-      </div>
+        <div styleName="information">
+          {Object.keys(information).map(key =>
+            renderInformation(information, key)
+          )}
+        </div>
+      </Link>
     </li>
   );
 };
