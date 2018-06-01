@@ -12,7 +12,6 @@ This boilerplate contains:
 
 TODO:
 
-* charactercard anchor
-* input component with label and classnames
+* no results
 * fix footer positioning
 * locations and episodes page

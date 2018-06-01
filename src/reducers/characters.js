@@ -10,12 +10,13 @@ import {
 
 // Set the initialstate so the structure of the store is clear
 const initialState = {
-  isFetching: false,
-  hasError: false,
   characters: [],
   filteredCharacters: [],
   filtered: false,
   info: {},
+  isFetching: false,
+  hasError: false,
+  error: '',
   filters: {
     name: {
       value: '',
@@ -35,12 +36,6 @@ const initialState = {
       label: 'Species',
       placeholder: 'Enter species'
     },
-    // type: {
-    //   value: '',
-    //   type: 'text',
-    //   label: 'Type',
-    //   placeholder: 'Enter type'
-    // },
     gender: {
       value: '',
       type: 'select',
@@ -59,10 +54,13 @@ const characters = (state = initialState, action) => {
         isFetching: true
       };
     case FETCH_ERROR:
+      console.log(action);
+      console.log(action.error);
       return {
         ...state,
         isFetching: false,
-        hasError: true
+        hasError: true,
+        error: action.error
       };
     case FETCH_CHARACTERS_SUCCESS:
       return {

@@ -37,6 +37,9 @@ export const filterCharactersSuccess = data => {
 
 const shouldFetch = state => {
   const info = state.characters.info;
+  if (info.pages === 1) {
+    return false;
+  }
   if (Object.keys(info).length && !info.next && info.prev) {
     return false;
   }
